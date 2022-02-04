@@ -1,4 +1,5 @@
-import pandas
+import openpyxl
+import  pandas
 import numpy as np
 
 def checkDirection(zCross):

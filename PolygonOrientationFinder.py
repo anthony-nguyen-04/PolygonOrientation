@@ -12,13 +12,17 @@ def checkDirection(zCross):
 location = "PolygonOrientation.xlsx"
 
 wb = openpyxl.load_workbook(location)
-sheet = wb["Sheet1"]
+sheet = wb["shape2"]
 
 points = {}
 
 for count, row in enumerate(sheet.iter_rows(max_row = sheet.max_row - 1)):
     coordinate = (row[1].value, row[2].value)
+    #print("\draw[fill=black] (%s, %s) circle (2pt);" % (row[1].value, row[2].value))
+    print("\\node at (%s, %s) {P%s};" % (row[1].value, row[2].value+0.5, count+1))
     points[count] = coordinate
+
+
 
 bottomPoint = sorted(points.items(), key = lambda x: x[1][1])[0]
 bottomIndex = bottomPoint[0]

@@ -1,6 +1,6 @@
 %whiteImage = 255 * zeros(480, 640, 'uint8');
 % why is (0,0) top left instead of bottom left
-picture = imread("media1.jpg");
+picture = imread("flower.jpg");
 imshow(picture);
 
 % draws polygon on top of image
